@@ -22,3 +22,5 @@ Installation:
         self.present(library, animated: true) {
             
         }
+
+<a href="https://imgflip.com/gif/22yrtn"><img src="https://i.imgflip.com/22yrtn.gif" title="made at imgflip.com"/></a>

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ImageLibraryDemo
 //
-//  Created by kraftly on 1/14/18.
+//  Created by Mayank on 1/14/18.
 //  Copyright © 2018 Mayank. All rights reserved.
 //
 

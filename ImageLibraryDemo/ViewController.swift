@@ -12,7 +12,7 @@ class ViewController: UIViewController
 {
     @IBOutlet weak var segmentPushPop: UISegmentedControl!
     
-    var library: ImageLibraryViewController!
+//    var library: ImageLibraryViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ViewController: UIViewController
 
     @IBAction func tapShowImages(_ sender: Any)
     {
-        library = ImageLibraryViewController()
+        let library = ImageLibraryViewController()
         library.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         
         library.arrayImages = [UIImage.init(named: "random.jpg")!,"https://i.ytimg.com/vi/PCwL3-hkKrg/maxresdefault.jpg",UIImage.init(named: "random.jpg")!]

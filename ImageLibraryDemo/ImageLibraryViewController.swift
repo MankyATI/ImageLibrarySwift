@@ -24,7 +24,7 @@ class ImageLibraryViewController: UIViewController, UIScrollViewDelegate, UIGest
     var selectedIndex : Int = 0
     var bgColor : UIColor! // Default white
     var selectedColor : UIColor! // Defaul orange
-    // set to false if you do not need the bottom image selector
+    var showBottomBar: Bool = true // set to false if you do not need the bottom image selector
     private let buttonOffset : Int = 100
     
     
@@ -116,6 +116,7 @@ class ImageLibraryViewController: UIViewController, UIScrollViewDelegate, UIGest
         if  vel.y > 0.0
         {
             self.view.transform = CGAffineTransform.init(translationX: vel.x, y: vel.y)
+            self.view.alpha = 1 - (vel.y/200)
         }
         if(gestureRecognizer.state == UIGestureRecognizerState.ended)
         {
@@ -180,11 +181,11 @@ class ImageLibraryViewController: UIViewController, UIScrollViewDelegate, UIGest
         self.view.addSubview(btnClose)
         
 //        btnClose.setImage(UIImage.init(named: "cross"), for: UIControlState.normal)
-        btnClose.setTitle("close", for: UIControlState.normal)
+        btnClose.setTitle("Close", for: UIControlState.normal)
         btnClose.addTarget(self, action: #selector(tapClose(_:)), for: UIControlEvents.touchUpInside)
         btnClose.setTitleColor(UIColor.black, for: UIControlState.normal)
         
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0(44)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": btnClose]))
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[v0(60)]-10-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": btnClose]))
         
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[v0(44)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": btnClose]))
     }
